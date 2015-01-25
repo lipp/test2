@@ -1,9 +1,8 @@
 
 $('.impressum, .contact').click(function(e) {
   if (!$(e.delegateTarget).hasClass('expand')) {
-      $(e.delegateTarget).scrollToMe();
+    $(e.delegateTarget).scrollToMe();
   }
-
   $(e.delegateTarget).toggleClass('expand');
 
 });
@@ -52,6 +51,10 @@ $(function() {
 
 $('a[href*="#contact"]').click(function() {
   $('#contact').addClass('expand');
+});
+
+$('header nav a').click(function() {
+  $('body').removeClass('show-menu');
 });
 
 jQuery.fn.extend({
