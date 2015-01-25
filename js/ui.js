@@ -1,6 +1,11 @@
 
-$('.newsletter, .contact').click(function(e) {
+$('.impressum, .contact').click(function(e) {
+  if (!$(e.delegateTarget).hasClass('expand')) {
+      $(e.delegateTarget).scrollToMe();
+  }
+
   $(e.delegateTarget).toggleClass('expand');
+
 });
 
 $('.burger').click(function() {
@@ -28,4 +33,33 @@ $(window).bind('touchmove scroll', function() {
 
 $(function() {
   FastClick.attach(document.body);
+});
+
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+$('a[href*="#contact"]').click(function() {
+  $('#contact').addClass('expand');
+});
+
+jQuery.fn.extend({
+  scrollToMe: function () {
+    var x = jQuery(this).offset().top - 100 + 'px';
+    jQuery('html,body').animate({scrollTop: x}, 1000);
+  }});
+
+$('nav a.contact').click(function() {
+  $('footer .contact').scrollToMe();
 });
