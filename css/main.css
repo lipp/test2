@@ -285,6 +285,9 @@ ul li {
       -ms-flex-direction: column;
           flex-direction: column; }
   ul li > div {
+    padding: 20px 0;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
@@ -302,13 +305,17 @@ ul li {
       display: block;
       margin: 0 auto; }
     ul li > div .graphic {
-      width: 30%; }
+      width: 30%;
+      -webkit-transform: scale(1.2, 1.2);
+          -ms-transform: scale(1.2, 1.2);
+              transform: scale(1.2, 1.2); }
     ul li > div .content {
       text-align: center;
       -webkit-align-self: stretch;
           -ms-flex-item-align: stretch;
               align-self: stretch;
-      width: 70%; }
+      width: 70%;
+      padding-right: 20px; }
       ul li > div .content > * {
         font-size: 17px;
         margin: 20px auto;
@@ -343,7 +350,6 @@ article > ul {
         -ms-flex-positive: 1;
             flex-grow: 1;
     margin: 2vw;
-    height: 250px;
     border: 1px solid #bdbeba;
     border-right: none;
     border-top: none; }
@@ -374,25 +380,27 @@ article > ul {
       article > ul > li {
         margin: 10px 0; } }
   article > ul > li.flex-fill {
-    height: 0; }
+    height: 0;
+    border: none; }
 
 .termine h1 {
   border-right: 10px solid #cf2f77;
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
-.termine .content {
+.termine > div {
   border-right: 10px solid #facf4e; }
 .termine .graphic {
   position: relative; }
   .termine .graphic .day {
     position: absolute;
     top: 26px;
-    left: calc(50% - 10px);
-    font-size: 22px; }
+    left: calc(50% - 12px);
+    font-size: 22px;
+    color: #cf2f77; }
   .termine .graphic .month {
     position: absolute;
     top: 44px;
-    left: calc(50% - 10px); }
+    left: calc(50% - 13px); }
 .termine a {
   color: #cf2f77; }
 
@@ -400,21 +408,21 @@ article > ul {
   border-right: 10px solid #2a96c5;
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
-.youtube .content {
+.youtube > div {
   border-right: 10px solid #dd5433; }
 
 .buehne h1 {
   border-right: 10px solid #803f83;
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
-.buehne .content {
+.buehne > div {
   border-right: 10px solid #9fc758; }
 
 .museum h1 {
   border-right: 10px solid #51b8b0;
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
-.museum .content {
+.museum > div {
   border-right: 10px solid #facf4e; }
 .museum img {
   padding-left: 14px; }
@@ -423,14 +431,14 @@ article > ul {
   border-right: 10px solid #dd5433;
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
-.newsletter .content {
+.newsletter > div {
   border-right: 10px solid #2a96c5; }
 
 .shop h1 {
   border-right: 10px solid #9fc758;
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
-.shop .content {
+.shop > div {
   border-right: 10px solid #803f83; }
 
 .main {
