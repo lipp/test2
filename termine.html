@@ -28,55 +28,240 @@
       <li><a href="buehne.html">B&uuml;hne</a></li>
       <li><a href="http://museumdesscheiterns.tumblr.com/post/102313868913/museum-des-scheiterns-vom-13-11-bis-23-11-2014-in" target="_blank">Museum</a></li>
       <li><a href="http://shop.mehr-depression.de" target="_blank">Shop</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
       <li><a href="./termine.html#contact">Kontakt</a></li>
     </ul>
   </nav>
 </header>
 <div style="height: 80px"></div>
 
+  <div class="shows-main">
+  <h1>Nicos Termine</h1>
   <form>
-  <select class="filter">
-    <option value="date">Datum</option>
-    <option value="city">Stadt</option>
-    <option value="distance">Entfernung</option>
-  </select>
-</form>
-
-<ul class="shows">
-      
-      <li data-city="Kassel" data-coords="" data-date="2015-02-18 20:15" data-category="Solo"
-      >
-        <div>
-          <h2 class="date">2015-02-18 20:15</h2>
-          <h2 class="city">Kassel</h2>
-          <h2 class="title">Freude ist nur an Mangel an Informationen - Update 1.5</h2>
-        </div>
-      </li>
-      
-      <li data-city="Bremen" data-coords="" data-date="2015-01-22" data-category="Solo"
-      >
-        <div>
-          <h2 class="date">2015-01-22</h2>
-          <h2 class="city">Bremen</h2>
-          <h2 class="title">Freude ist nur an Mangel an Informationen - Update 1.5</h2>
-        </div>
-      </li>
-      
-      <li data-city="Würzburg" data-coords="" data-date="2015-01-18 20:00" data-category="Solo"
-      >
-        <div>
-          <h2 class="date">2015-01-18 20:00</h2>
-          <h2 class="city">Würzburg</h2>
-          <h2 class="title">Freude ist nur an Mangel an Informationen - Update 1.5</h2>
-        </div>
-      </li>
-      
-</ul>
-
-<script type="text/javascript"
-src="https://maps.googleapis.com/maps/api/js">
-</script>
-
+    <fieldset class="form-sort">
+      <legend>Sortierung:</legend>
+      <label><input name="sort" type="radio" value="date" checked><span>Datum</span></label>
+      <label><input name="sort" type="radio" value="distance"><span>In deiner N&auml;he</span></label>
+    </fieldset>
+    <fieldset class="form-categories">
+      <legend>Art:</legend>
+      <div class="categories">
+      <label><input value="solo" type="checkbox" checked><span>Solo</span></label>
+      <label><input value="duo" type="checkbox" checked><span>Duo</span></label>
+      <label><input value="mixed" type="checkbox" checked><span>Mixed-Show</span></label>
+      <label><input value="tv" type="checkbox" checked><span>TV-Auftritt</span></label>
+      <label><input value="radio" type="checkbox" checked><span>Radio</span></label>
+      <label><input value="alt" type="checkbox" checked><span>Sonstiges</span></label>
+    </div>
+    </fieldset>
+  </form>
+  <ul class="shows">
+    
+    <li data-city="Frankfurt am Main" data-coords="" data-date="2015-02-12 20:00" data-category="solo">
+      <div class="date">
+        <h3>12.02.</h3>
+        <h3>20:00 Uhr</h3>
+      </div>
+      <div class="location">
+        <h3>Frankfurt am Main</h3>
+        <h3>Neues Theater Höchst</h3>
+      </div>
+      <div class="description">
+        <h3>
+        
+            Solo
+          
+        </h3>
+        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+      </div>
+      <div class="prices">
+        <h3>Preis: </h3>
+        <h3>Erm&auml;ssigt: </h3>
+      </div>
+      <div class="tickets">
+        <h3 class="tickets"><a href="http://www.neues-theater.de/index.php?id=9&tx_ddticketfe_pi1[art]=verkauf&tx_ddticketfe_pi1[vdid]=1104">Tickets kaufen</a></h3>
+      </div>
+      <div class="comment">
+        <span>Nicos Kommentar: </span>
+      </div>
+    </li>
+    
+    <li data-city="Saarbrücken" data-coords="" data-date="2015-02-13 20:15" data-category="solo">
+      <div class="date">
+        <h3>13.02.</h3>
+        <h3>20:15 Uhr</h3>
+      </div>
+      <div class="location">
+        <h3>Saarbrücken</h3>
+        <h3>Camera Zwo</h3>
+      </div>
+      <div class="description">
+        <h3>
+        
+            Solo
+          
+        </h3>
+        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+      </div>
+      <div class="prices">
+        <h3>Preis: </h3>
+        <h3>Erm&auml;ssigt: </h3>
+      </div>
+      <div class="tickets">
+        <h3 class="tickets"><a href="https://www.facebook.com/dichterdschungel">Tickets kaufen</a></h3>
+      </div>
+      <div class="comment">
+        <span>Nicos Kommentar: </span>
+      </div>
+    </li>
+    
+    <li data-city="Magdeburg" data-coords="" data-date="2015-02-14 20:15" data-category="solo">
+      <div class="date">
+        <h3>14.02.</h3>
+        <h3>20:15 Uhr</h3>
+      </div>
+      <div class="location">
+        <h3>Magdeburg</h3>
+        <h3>Grüne Zitadelle</h3>
+      </div>
+      <div class="description">
+        <h3>
+        
+            Solo
+          
+        </h3>
+        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+      </div>
+      <div class="prices">
+        <h3>Preis: </h3>
+        <h3>Erm&auml;ssigt: </h3>
+      </div>
+      <div class="tickets">
+        <h3 class="tickets"><a href="http://www.theater-zitadelle.com/">Tickets kaufen</a></h3>
+      </div>
+      <div class="comment">
+        <span>Nicos Kommentar: </span>
+      </div>
+    </li>
+    
+    <li data-city="Kassel" data-coords="" data-date="2015-02-18 20:15" data-category="solo">
+      <div class="date">
+        <h3>18.02.</h3>
+        <h3>20:15 Uhr</h3>
+      </div>
+      <div class="location">
+        <h3>Kassel</h3>
+        <h3>Lagerhalle</h3>
+      </div>
+      <div class="description">
+        <h3>
+        
+            Solo
+          
+        </h3>
+        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+      </div>
+      <div class="prices">
+        <h3>Preis: </h3>
+        <h3>Erm&auml;ssigt: </h3>
+      </div>
+      <div class="tickets">
+        <h3 class="tickets"><a href="">Tickets kaufen</a></h3>
+      </div>
+      <div class="comment">
+        <span>Nicos Kommentar: </span>
+      </div>
+    </li>
+    
+    <li data-city="" data-coords="" data-date="2015-02-26 20:15" data-category="tv">
+      <div class="date">
+        <h3>26.02.</h3>
+        <h3>20:15 Uhr</h3>
+      </div>
+      <div class="location">
+        <h3></h3>
+        <h3>ARD</h3>
+      </div>
+      <div class="description">
+        <h3>
+        
+            TV-Auftritt
+          
+        </h3>
+        <h3>Vereinsheim Schwabing</h3>
+      </div>
+      <div class="prices">
+        <h3>Preis: </h3>
+        <h3>Erm&auml;ssigt: </h3>
+      </div>
+      <div class="tickets">
+        <h3 class="tickets"><a href="http://www.br.de/fernsehen/bayerisches-fernsehen/sendungen/vereinsheim/vereinsheim104.html">Tickets kaufen</a></h3>
+      </div>
+      <div class="comment">
+        <span>Nicos Kommentar: </span>
+      </div>
+    </li>
+    
+    <li data-city="Bremen" data-coords="" data-date="2015-01-22" data-category="Solo">
+      <div class="date">
+        <h3>22.01.</h3>
+        <h3> 0:00 Uhr</h3>
+      </div>
+      <div class="location">
+        <h3>Bremen</h3>
+        <h3>Lagerhalle</h3>
+      </div>
+      <div class="description">
+        <h3>
+        
+            Sonstiges
+        
+        </h3>
+        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+      </div>
+      <div class="prices">
+        <h3>Preis: </h3>
+        <h3>Erm&auml;ssigt: </h3>
+      </div>
+      <div class="tickets">
+        <h3 class="tickets"><a href="">Tickets kaufen</a></h3>
+      </div>
+      <div class="comment">
+        <span>Nicos Kommentar: </span>
+      </div>
+    </li>
+    
+    <li data-city="Würzburg" data-coords="" data-date="2015-01-18 20:00" data-category="Solo">
+      <div class="date">
+        <h3>18.01.</h3>
+        <h3>20:00 Uhr</h3>
+      </div>
+      <div class="location">
+        <h3>Würzburg</h3>
+        <h3>Lagerhalle</h3>
+      </div>
+      <div class="description">
+        <h3>
+        
+            Sonstiges
+        
+        </h3>
+        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+      </div>
+      <div class="prices">
+        <h3>Preis: </h3>
+        <h3>Erm&auml;ssigt: </h3>
+      </div>
+      <div class="tickets">
+        <h3 class="tickets"><a href="">Tickets kaufen</a></h3>
+      </div>
+      <div class="comment">
+        <span>Nicos Kommentar: </span>
+      </div>
+    </li>
+    
+  </ul>
+</div>
   <footer>
   <div id="contact" class="contact">
     <div class="title">
@@ -88,18 +273,59 @@ src="https://maps.googleapis.com/maps/api/js">
         <div class="expand-symbol">&gt;&gt;</div>
       </span>
     </div>
-    <h2>Kontakt</h2>
-    <p>
-      Keine Lust auf Facebook oder das andere Ged&ouml;ns?
-      Dann hier eintragen und h&ouml;chstens viermal im Jahr auf
-      dem Laufenden sein rund um Demotivationsworkshops,
-      Ungl&uuml;ckskekse und co!
-      Als Belohnung gibt es hier einen von Nicos
-    </p>
-    <form>
-      <input type='email' placeholder='depri@miert.de'/>
-      <button>Senden</button>
-    </form>
+    <h2></h2>
+    <div class="contact-details">
+      <div class="contact-info">
+        <p>
+          Autogrammanfragen mit frankiertem Rückumschlag bitte an die Konzertagentur Friedrich (Adresse unten).
+          Natürlich kann jeder die maschinell erstellte und ohne Unterschrift gültige Autogrammkarte auch
+          gleich online bestellen.
+        </p>
+        <p>
+          Hinweis: Nico Semsrott tritt grundsätzlich weder bei Firmenanlässen noch
+          auf Privatveranstaltungen auf. Ausnahmen bilden hier: Insolvenzen, Scheidungen,
+          Beerdigungen. (Und alle Anlässe, die sich irgendwie mit psychischer Krank-/Gesundheit befassen.)
+        </p>
+      </div>
+      <div class="contact-address">
+        <h3>
+        Fragen zu Auftritten in Deutschland, Österreich und Luxemburg bitte an:
+        </h3>
+        <p>
+        Sven Reuß<br/>
+        /// booking@nicosemsrott.de<br/>
+        <br/>
+        Konzertagentur Friedrich GmbH<br/>
+        Am Gründlein 3<br/>
+        96472 Rödental<br/>
+        <br/>
+        Tel 09563/3082-20<br/>
+        http://www.konzertagentur-friedrich.de/<br/>
+        </p>
+        <h3>
+        Fragen zu Auftritten in der Schweiz bitte an:
+        </h3>
+        <p>
+        Pascal Mettler<br/>
+        /// mettler@kulturbau.ch<br/>
+        <br/>
+        Kulturbau GmbH<br/>
+        Wolferhaus<br/>
+        Tösstalstrasse 352<br/>
+        8482 Winterthur – Sennhof<br/>
+        <br/>
+        Tel +41 52 203 41 41<br/>
+        http://www.kulturbau.ch/<br/>
+        </p>
+        <h3>
+        Private Post bitte an:
+        </h3>
+        <p>
+        nico@nicosemsrott.de<br/>
+        Nico liest alle Mails. Leider ist es ihm bei seinem Arbeitstempo nicht möglich, die vielen Zuschriften ohne Ausnahme zu beantworten. Er freut sich aber – heimlich – über alle.
+        </p>
+      </div>
+    </div>
   </div>
   <div class="social">
     <ul>
@@ -137,8 +363,12 @@ src="https://maps.googleapis.com/maps/api/js">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.3/fastclick.min.js"></script>
 <script src="js/ui.js"></script>
 
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+
 <script src="js/sort-shows.js"></script>
 
 
+
+</script>
 
 </html>

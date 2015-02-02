@@ -1,32 +1,49 @@
 $(function() {
-var filter = {
-  primary: 'date'
-};
+
+var sortBy = 'date';
+var categories = {};
+
+$('.form-categories input[type=checkbox]').each(function(index, e) {
+  categories[e.value] = e.checked;
+});
+
+$('.form-categories input[type=checkbox]').change(function(e) {
+  categories[e.delegateTarget.value] = e.delegateTarget.checked;
+  sortShows();
+});
+
 
 var sortShows = function() {
   var shows = $('.shows');
   var showsLi = shows.children('li');
-  showsLi.sort(function(a, b) {
-    if (filter.primary === 'date') {
+  var sortedShowsLi = showsLi.sort(function(a, b) {
+    if (sortBy === 'date') {
       var da = new Date(a.getAttribute('data-date').replace(/-/g, "/"));
       var db = new Date(b.getAttribute('data-date').replace(/-/g, "/"));
       return da > db ? 1 : -1;
     } else {
-      var da = a.getAttribute('data-' + filter.primary);
-      var db = b.getAttribute('data-' + filter.primary);
+      var da = parseFloat(a.getAttribute('data-distance'));
+      var db = parseFloat(b.getAttribute('data-distance'));
+      console.log(da,db);
       return da > db ? 1 : -1;
     }
   });
+  sortedShowsLi.hide();
+  var filteredShowsLi = showsLi.filter(function(index, el) {
+    var category = $(el).data('category');
+    console.log(category, categories[category]);
+    return categories[category];
+  }).show();
 
-  showsLi.detach().appendTo(shows);
+  showsLi.detach();
+  sortedShowsLi.appendTo(shows);
 };
 
 var distInit = false;
 
-$('.filter').change(function() {
-  filter.primary = $('.filter').val();
-  console.log(filter);
-  if (filter.primary === 'distance' && distInit === false) {
+$('.form-sort input[type=radio]').change(function(e) {
+  sortBy = this.value;
+  if (sortBy === 'distance' && distInit === false) {
     initDistances();
     distInit = true;
   } else {
@@ -82,16 +99,21 @@ if (navigator.geolocation) {
 
     $('.shows li').each(function(index, el) {
       var city = $(el).data('city');
-      geocoder.geocode( {address: city + ', Germany'}, function(results, status){
-        if (status == google.maps.GeocoderStatus.OK) {
-          var loc = results[0].geometry.location;
-          //  console.log(city, results[0].geometry.location);//center the map over the result
-          var dist = distance(position.coords.longitude, position.coords.latitude, loc.D, loc.k);
-          console.log('Distance ' + city, dist);
-          $(el).attr('data-distance', dist);
-          sortShows();
-        }
-      });
+      if ($(el).data('category') === 'tv') {
+        $(el).attr('data-distance', 0);
+        sortShows();
+      } else {
+        geocoder.geocode( {address: city + ', Germany'}, function(results, status){
+          if (status == google.maps.GeocoderStatus.OK) {
+            var loc = results[0].geometry.location;
+            //  console.log(city, results[0].geometry.location);//center the map over the result
+            var dist = distance(position.coords.longitude, position.coords.latitude, loc.D, loc.k);
+            console.log('Distance ' + city, dist);
+            $(el).attr('data-distance', dist);
+            sortShows();
+          }
+        });
+      }
     });
   });
 }

@@ -1,7 +1,7 @@
 
 $('.impressum, .contact').click(function(e) {
   if (!$(e.delegateTarget).hasClass('expand')) {
-    $(e.delegateTarget).scrollToMe();
+    //$(e.delegateTarget).scrollToMe();
   }
   $(e.delegateTarget).toggleClass('expand');
 
