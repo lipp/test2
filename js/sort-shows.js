@@ -115,7 +115,7 @@ if (navigator.geolocation) {
         });
       }
     });
-  });
+  }, function(err){}, {enableHighAccuracy: true});
 }
 };
 });

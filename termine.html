@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body class="shows-layout">
   <header>
   <nav>
     <a class="home" href="index.html">
@@ -35,8 +35,10 @@
 </header>
 <div style="height: 80px"></div>
 
+  <div class="content-container">
+  <h1>Termine<a class="close" href="index.html">X</a></h1>
   <div class="shows-main">
-  <h1>Nicos Termine</h1>
+
   <form>
     <fieldset class="form-sort">
       <legend>Sortierung:</legend>
@@ -45,6 +47,7 @@
     </fieldset>
     <fieldset class="form-categories">
       <legend>Art:</legend>
+      <div class="pulldown-wrap">
       <div class="categories">
       <label><input value="solo" type="checkbox" checked><span>Solo</span></label>
       <label><input value="duo" type="checkbox" checked><span>Duo</span></label>
@@ -53,214 +56,181 @@
       <label><input value="radio" type="checkbox" checked><span>Radio</span></label>
       <label><input value="alt" type="checkbox" checked><span>Sonstiges</span></label>
     </div>
+  </div>
     </fieldset>
   </form>
   <ul class="shows">
     
-    <li data-city="Frankfurt am Main" data-coords="" data-date="2015-02-12 20:00" data-category="solo">
-      <div class="date">
-        <h3>12.02.</h3>
-        <h3>20:00 Uhr</h3>
+    <li data-city="" data-coords="" data-date="2015-02-11 23:25" data-category="tv">
+      <div class="show-date">
+        <h3 class="show-day">11.02.15</h3>
+        <h3 class="show-time">23:25 Uhr</h3>
       </div>
-      <div class="location">
-        <h3>Frankfurt am Main</h3>
-        <h3>Neues Theater Höchst</h3>
-      </div>
-      <div class="description">
-        <h3>
+      <div class="show-details">
         
-            Solo
+          <h3 class="show-prim">Pro 7: TV Total</h3>
+          <h3 class="show-sec">
+            
+            Fernsehen
+            
+          </h3>
+        
+        <h3 class="show-title">Kurzauftritt</h3>
+        <h3 class="show-etc">
+        
+            
           
         </h3>
-        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+        <h3 class="show-tickets"><a href="http://www.br.de/fernsehen/bayerisches-fernsehen/sendungen/vereinsheim/vereinsheim104.html">Tickets kaufen</a></h3>
       </div>
-      <div class="prices">
-        <h3>Preis: </h3>
-        <h3>Erm&auml;ssigt: </h3>
+    </li>
+    
+    <li data-city="Frankfurt am Main" data-coords="" data-date="2015-02-12 20:00" data-category="solo">
+      <div class="show-date">
+        <h3 class="show-day">12.02.15</h3>
+        <h3 class="show-time">20:00 Uhr</h3>
       </div>
-      <div class="tickets">
-        <h3 class="tickets"><a href="http://www.neues-theater.de/index.php?id=9&tx_ddticketfe_pi1[art]=verkauf&tx_ddticketfe_pi1[vdid]=1104">Tickets kaufen</a></h3>
-      </div>
-      <div class="comment">
-        <span>Nicos Kommentar: </span>
+      <div class="show-details">
+        
+          <h3 class="show-prim">Frankfurt am Main</h3>
+          <h3 class="show-sec">Neues Theater Höchst</h3>
+        
+        <h3 class="show-title">Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+        <h3 class="show-etc">
+        
+            Soloprogramm
+          
+        </h3>
+        <h3 class="show-tickets"><a href="http://www.neues-theater.de/index.php?id=9&tx_ddticketfe_pi1[art]=verkauf&tx_ddticketfe_pi1[vdid]=1104">Tickets kaufen</a></h3>
       </div>
     </li>
     
     <li data-city="Saarbrücken" data-coords="" data-date="2015-02-13 20:15" data-category="solo">
-      <div class="date">
-        <h3>13.02.</h3>
-        <h3>20:15 Uhr</h3>
+      <div class="show-date">
+        <h3 class="show-day">13.02.15</h3>
+        <h3 class="show-time">20:15 Uhr</h3>
       </div>
-      <div class="location">
-        <h3>Saarbrücken</h3>
-        <h3>Camera Zwo</h3>
-      </div>
-      <div class="description">
-        <h3>
+      <div class="show-details">
         
-            Solo
+          <h3 class="show-prim">Saarbrücken</h3>
+          <h3 class="show-sec">Camera Zwo</h3>
+        
+        <h3 class="show-title">Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+        <h3 class="show-etc">
+        
+            Soloprogramm
           
         </h3>
-        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
-      </div>
-      <div class="prices">
-        <h3>Preis: </h3>
-        <h3>Erm&auml;ssigt: </h3>
-      </div>
-      <div class="tickets">
-        <h3 class="tickets"><a href="https://www.facebook.com/dichterdschungel">Tickets kaufen</a></h3>
-      </div>
-      <div class="comment">
-        <span>Nicos Kommentar: </span>
+        <h3 class="show-tickets"><a href="https://www.facebook.com/dichterdschungel">Tickets kaufen</a></h3>
       </div>
     </li>
     
     <li data-city="Magdeburg" data-coords="" data-date="2015-02-14 20:15" data-category="solo">
-      <div class="date">
-        <h3>14.02.</h3>
-        <h3>20:15 Uhr</h3>
+      <div class="show-date">
+        <h3 class="show-day">14.02.15</h3>
+        <h3 class="show-time">20:15 Uhr</h3>
       </div>
-      <div class="location">
-        <h3>Magdeburg</h3>
-        <h3>Grüne Zitadelle</h3>
-      </div>
-      <div class="description">
-        <h3>
+      <div class="show-details">
         
-            Solo
+          <h3 class="show-prim">Magdeburg</h3>
+          <h3 class="show-sec">Grüne Zitadelle</h3>
+        
+        <h3 class="show-title">Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+        <h3 class="show-etc">
+        
+            Soloprogramm
           
         </h3>
-        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
-      </div>
-      <div class="prices">
-        <h3>Preis: </h3>
-        <h3>Erm&auml;ssigt: </h3>
-      </div>
-      <div class="tickets">
-        <h3 class="tickets"><a href="http://www.theater-zitadelle.com/">Tickets kaufen</a></h3>
-      </div>
-      <div class="comment">
-        <span>Nicos Kommentar: </span>
+        <h3 class="show-tickets"><a href="http://www.theater-zitadelle.com/">Tickets kaufen</a></h3>
       </div>
     </li>
     
     <li data-city="Kassel" data-coords="" data-date="2015-02-18 20:15" data-category="solo">
-      <div class="date">
-        <h3>18.02.</h3>
-        <h3>20:15 Uhr</h3>
+      <div class="show-date">
+        <h3 class="show-day">18.02.15</h3>
+        <h3 class="show-time">20:15 Uhr</h3>
       </div>
-      <div class="location">
-        <h3>Kassel</h3>
-        <h3>Lagerhalle</h3>
-      </div>
-      <div class="description">
-        <h3>
+      <div class="show-details">
         
-            Solo
+          <h3 class="show-prim">Kassel</h3>
+          <h3 class="show-sec">Lagerhalle</h3>
+        
+        <h3 class="show-title">Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+        <h3 class="show-etc">
+        
+            Soloprogramm
           
         </h3>
-        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
-      </div>
-      <div class="prices">
-        <h3>Preis: </h3>
-        <h3>Erm&auml;ssigt: </h3>
-      </div>
-      <div class="tickets">
-        <h3 class="tickets"><a href="">Tickets kaufen</a></h3>
-      </div>
-      <div class="comment">
-        <span>Nicos Kommentar: </span>
+        <h3 class="show-tickets"><a href="">Tickets kaufen</a></h3>
       </div>
     </li>
     
-    <li data-city="" data-coords="" data-date="2015-02-26 20:15" data-category="tv">
-      <div class="date">
-        <h3>26.02.</h3>
-        <h3>20:15 Uhr</h3>
+    <li data-city="" data-coords="" data-date="2015-02-26 23:30" data-category="tv">
+      <div class="show-date">
+        <h3 class="show-day">26.02.15</h3>
+        <h3 class="show-time">23:30 Uhr</h3>
       </div>
-      <div class="location">
-        <h3></h3>
-        <h3>ARD</h3>
-      </div>
-      <div class="description">
-        <h3>
+      <div class="show-details">
         
-            TV-Auftritt
+          <h3 class="show-prim">ARD: Vereinsheim Schwabing</h3>
+          <h3 class="show-sec">
+            
+            Fernsehen
+            
+          </h3>
+        
+        <h3 class="show-title">Kurzauftritt</h3>
+        <h3 class="show-etc">
+        
+            
           
         </h3>
-        <h3>Vereinsheim Schwabing</h3>
-      </div>
-      <div class="prices">
-        <h3>Preis: </h3>
-        <h3>Erm&auml;ssigt: </h3>
-      </div>
-      <div class="tickets">
-        <h3 class="tickets"><a href="http://www.br.de/fernsehen/bayerisches-fernsehen/sendungen/vereinsheim/vereinsheim104.html">Tickets kaufen</a></h3>
-      </div>
-      <div class="comment">
-        <span>Nicos Kommentar: </span>
+        <h3 class="show-tickets"><a href="http://www.br.de/fernsehen/bayerisches-fernsehen/sendungen/vereinsheim/vereinsheim104.html">Tickets kaufen</a></h3>
       </div>
     </li>
     
     <li data-city="Bremen" data-coords="" data-date="2015-01-22" data-category="Solo">
-      <div class="date">
-        <h3>22.01.</h3>
-        <h3> 0:00 Uhr</h3>
+      <div class="show-date">
+        <h3 class="show-day">22.01.15</h3>
+        <h3 class="show-time"> 0:00 Uhr</h3>
       </div>
-      <div class="location">
-        <h3>Bremen</h3>
-        <h3>Lagerhalle</h3>
-      </div>
-      <div class="description">
-        <h3>
+      <div class="show-details">
+        
+          <h3 class="show-prim">Bremen</h3>
+          <h3 class="show-sec">Lagerhalle</h3>
+        
+        <h3 class="show-title">Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+        <h3 class="show-etc">
         
             Sonstiges
         
         </h3>
-        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
-      </div>
-      <div class="prices">
-        <h3>Preis: </h3>
-        <h3>Erm&auml;ssigt: </h3>
-      </div>
-      <div class="tickets">
-        <h3 class="tickets"><a href="">Tickets kaufen</a></h3>
-      </div>
-      <div class="comment">
-        <span>Nicos Kommentar: </span>
+        <h3 class="show-tickets"><a href="">Tickets kaufen</a></h3>
       </div>
     </li>
     
     <li data-city="Würzburg" data-coords="" data-date="2015-01-18 20:00" data-category="Solo">
-      <div class="date">
-        <h3>18.01.</h3>
-        <h3>20:00 Uhr</h3>
+      <div class="show-date">
+        <h3 class="show-day">18.01.15</h3>
+        <h3 class="show-time">20:00 Uhr</h3>
       </div>
-      <div class="location">
-        <h3>Würzburg</h3>
-        <h3>Lagerhalle</h3>
-      </div>
-      <div class="description">
-        <h3>
+      <div class="show-details">
+        
+          <h3 class="show-prim">Würzburg</h3>
+          <h3 class="show-sec">Lagerhalle</h3>
+        
+        <h3 class="show-title">Freude ist nur an Mangel an Informationen - Update 1.5</h3>
+        <h3 class="show-etc">
         
             Sonstiges
         
         </h3>
-        <h3>Freude ist nur an Mangel an Informationen - Update 1.5</h3>
-      </div>
-      <div class="prices">
-        <h3>Preis: </h3>
-        <h3>Erm&auml;ssigt: </h3>
-      </div>
-      <div class="tickets">
-        <h3 class="tickets"><a href="">Tickets kaufen</a></h3>
-      </div>
-      <div class="comment">
-        <span>Nicos Kommentar: </span>
+        <h3 class="show-tickets"><a href="">Tickets kaufen</a></h3>
       </div>
     </li>
     
   </ul>
+</div>
 </div>
   <footer>
   <div id="contact" class="contact">
@@ -300,7 +270,7 @@
         96472 Rödental<br/>
         <br/>
         Tel 09563/3082-20<br/>
-        <a href="http://www.konzertagentur-friedrich.de">www.konzertagentur-friedrich.de</a>/<br/>
+        <a href="http://www.konzertagentur-friedrich.de"  target="_blank">www.konzertagentur-friedrich.de</a>/<br/>
         </p>
         <h3>
         Fragen zu Auftritten in der Schweiz bitte an:
@@ -315,13 +285,13 @@
         8482 Winterthur – Sennhof<br/>
         <br/>
         Tel +41 52 203 41 41<br/>
-        <a href="http://www.kulturbau.ch">www.kulturbau.ch/</a><br/>
+        <a href="http://www.kulturbau.ch" target="_blank">www.kulturbau.ch/</a><br/>
         </p>
         <h3>
         Private Post bitte an:
         </h3>
-        <p>
-        nico@nicosemsrott.de<br/>
+        <p><span class="email">ed.ttorsmesocin@ocin</span>
+        <br/>
         Nico liest alle Mails. Leider ist es ihm bei seinem Arbeitstempo nicht möglich, die vielen Zuschriften ohne Ausnahme zu beantworten. Er freut sich aber – heimlich – über alle.
         </p>
       </div>
