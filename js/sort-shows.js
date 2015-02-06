@@ -9,6 +9,7 @@ $('.form-categories input[type=checkbox]').each(function(index, e) {
 
 $('.form-categories input[type=checkbox]').change(function(e) {
   categories[e.delegateTarget.value] = e.delegateTarget.checked;
+  console.log('checkbox',e);
   sortShows();
 });
 
