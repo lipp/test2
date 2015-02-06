@@ -1,12 +1,9 @@
 
-$('.impressum, .contact').click(function(e) {
-  if (!$(e.delegateTarget).hasClass('expand')) {
+$('.impressum .title, .contact .title').click(function(e) {
+//  if (!$(e.delegateTarget).hasClass('expand')) {
     //$(e.delegateTarget).scrollToMe();
-  }
-  if (!$(e.target).is('a')) {
-    $(e.delegateTarget).toggleClass('expand');
-  }
-
+//  }
+    $(e.delegateTarget).parent().toggleClass('expand');
 });
 
 $('.burger').click(function() {
@@ -43,7 +40,7 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 200
         }, 1000);
         return false;
       }
