@@ -255,6 +255,7 @@ footer {
             justify-content: center; }
   footer .expander {
     width: 19px;
+    height: 16px;
     -webkit-transition: all 0.4s ease-out;
             transition: all 0.4s ease-out;
     -webkit-transform: rotate(90deg);
@@ -348,6 +349,8 @@ footer {
     -webkit-transition: all 0.4s ease-out;
             transition: all 0.4s ease-out; }
   @media (max-width: 321px) {
+    footer .title h3 {
+      width: 200px; }
     footer .impressum:not(.expand) {
       max-height: 28px; } }
   footer .social ul {
@@ -410,10 +413,10 @@ article ul {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: start;
-      -webkit-align-items: flex-start;
-          -ms-flex-align: start;
-              align-items: flex-start;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch;
       width: 100%; }
       @media (max-width: 817px) {
         article ul li > div {
@@ -732,18 +735,35 @@ form {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
   .categories .category {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    min-width: 130px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
   .categories > * {
     margin: 5px 0; }
+
+.plz, .plz-button {
+  margin: 5px 0px;
+  font-size: 14px;
+  line-height: 1.2em;
+  border: none; }
+
+.plz {
+  width: 57px;
+  text-align: center;
+  margin-left: 25px; }
+
+.plz-button {
+  background-color: #eee; }
 
 .article .main {
   background-color: #c1c9c8;
@@ -820,4 +840,5 @@ form {
 .newsletter-big .main {
   background-color: #c1c9c8; }
 .newsletter-big p {
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  margin-bottom: 30px; }

@@ -9,7 +9,7 @@ $('.form-categories input[type=checkbox]').each(function(index, e) {
 
 $('.form-categories input[type=checkbox]').change(function(e) {
   categories[e.delegateTarget.value] = e.delegateTarget.checked;
-  console.log('checkbox',e);
+  console.log('checkbox',e.target);
   sortShows();
 });
 
@@ -44,10 +44,15 @@ var distInit = false;
 
 $('.form-sort input[type=radio]').change(function(e) {
   sortBy = this.value;
-  if (sortBy === 'distance' && distInit === false) {
+  if (sortBy === 'distance') {
     initDistances();
     distInit = true;
+    $('.plz, .plz-button').prop('disabled', true);
+  } else if (sortBy === 'plz') {
+    $('.plz, .plz-button').prop('disabled', false);
+    sortShows();
   } else {
+    $('.plz, .plz-button').prop('disabled', true);
     sortShows();
   }
 });
@@ -89,34 +94,74 @@ var nextShow = $('.next-show').filter(function(index, el) {
   return da > db;
 })[0];
 
+
+
 $(nextShow).removeClass('hidden');
 
-var initDistances = function() {
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    console.log('location',position);
+$('.plz-button').click(function(){
+  var geocoder = new google.maps.Geocoder();
+  var postcode = $('.plz').val();
+  geocoder.geocode( {address: '' + postcode + ', Germany'}, function(results, status){
+    var loc = results[0].geometry.location;
+    $('.shows li').each(function(index, el) {
+      var latlng = $(el).attr('data-latlng');
+      if (latlng) {
+        var lat = parseFloat(latlng.split(',')[0]);
+        var lng = parseFloat(latlng.split(',')[1]);
+        var dist = distance(lng, lat, loc.D, loc.k);
+        console.log('distx',$(el).attr('data-city'), dist);
+        $(el).attr('data-distance', dist);
+      }
+    });
+    sortShows();
+  });
 
-    var geocoder = new google.maps.Geocoder();
+});
+
+var initDistances = function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log('location',position);
+      var geocoder = new google.maps.Geocoder();
+      var positionLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        geocoder.geocode({'latLng': positionLatLng}, function(results, status){
+        if (status == google.maps.GeocoderStatus.OK) {
+          var postcode =  results[2].address_components[0].long_name;
+          $('.plz').val(postcode);
+        }
+      });
+
+      $('.shows li').each(function(index, el) {
+        var latlng = $(el).data('latlng');
+        if (latlng) {
+          var lat = parseFloat(latlng.split(',')[0]);
+          var lng = parseFloat(latlng.split(',')[1]);
+          var dist = distance(lng, lat, position.coords.longitude, position.coords.latitude);
+          console.log('dist',$(el).attr('data-city'), dist);
+          $(el).attr('data-distance', dist);
+        }
+      });
+      sortShows();
+    }, function(err){}, {enableHighAccuracy: true});
+  }
+};
+
+setTimeout(function() {
+  var geocoder = new google.maps.Geocoder();
 
     $('.shows li').each(function(index, el) {
       var city = $(el).data('city');
-      if ($(el).data('category') === 'tv') {
+      if (!!!city) {
         $(el).attr('data-distance', 0);
-        sortShows();
       } else {
         geocoder.geocode( {address: city + ', Germany'}, function(results, status){
           if (status == google.maps.GeocoderStatus.OK) {
             var loc = results[0].geometry.location;
-            //  console.log(city, results[0].geometry.location);//center the map over the result
-            var dist = distance(position.coords.longitude, position.coords.latitude, loc.D, loc.k);
-            console.log('Distance ' + city, dist);
-            $(el).attr('data-distance', dist);
-            sortShows();
+            $(el).attr('data-latlng', '' + loc.k + ',' + loc.D);
           }
         });
       }
     });
-  }, function(err){}, {enableHighAccuracy: true});
-}
-};
+  },500);
+
 });
